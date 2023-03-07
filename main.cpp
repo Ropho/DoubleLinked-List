@@ -40,20 +40,24 @@ int main (void) {
     auto fifth = fourth;
     fifth.sort ();
 /////////////////////////////////////////////////friend std
-    std::cout << first << '\n';
+    std::cout << "FIRST LIST: "<< first;
 
     /////////////////////////////////////////////Печать всего списка
+    std::cout << "SECOND LIST: ";
     for (list::List<int>::Iterator it = second.begin (); it != second.end (); ++it) {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
 /////////////////////////////////////////////////Range-based for
+    std::cout << "THIRD LIST (INTERSECTED LIST): ";
     for (int val : third) {
         std::cout << val << " ";
     }
     std::cout << std::endl;
 
 /////////////////////////////////////////////////
-    std::cout << "|" << fourth << '\n';
-    std::cout << "SORT |" << fifth << '\n';
+    std::cout << "FOURTH LIST (UNITED): " << fourth;
+    std::cout << "FIFTH LIST (SORTED UNITED): " << fifth;
+
+    clear_log ();
 }

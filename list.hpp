@@ -3,9 +3,6 @@
 
 #include <iostream>
 #include "log.hpp"
-#include <stack>
-#include <tuple>
-
 
 namespace list {
 
@@ -37,7 +34,7 @@ namespace list {
     class Node {
 
             ~Node () {
-                LOG (__PF, "");
+                LOG (__PF, "NODE DTOR");
             }
 
             Node (const T& data) :
@@ -123,14 +120,17 @@ namespace list {
                 return ptr_ -> data_;
             }
 
-            bool operator == (const List_Iterator & other) {
+            bool operator == (const List_Iterator & other) const {
                 return (ptr_ == other.ptr_ && is_end_ == other.is_end_);
             }
-            bool operator != (const List_Iterator & other) {
+            bool operator != (const List_Iterator & other) const {
                 return (ptr_ != other.ptr_ || is_end_ != other.is_end_);
             }
-            bool operator < (const List_Iterator & other) {
+            bool operator < (const List_Iterator & other) const {
                 return ptr_->data_ < other.ptr_->data_;
+            }
+            bool operator > (const List_Iterator & other) const {
+                return ptr_->data_ > other.ptr_->data_;
             }
 
         private:
@@ -141,6 +141,9 @@ namespace list {
     };
 
 
+/////////////////////////////////////////////////LIST_ITERATOR & CONST_LIST_ITERATOR
+/////////////////////////////////////////////////CAN BE DERIVEN FROM ABSTRACT ITERATOR CLASS
+/////////////////////////////////////////////////TO AVOID CODE DUPLICATION
     template <typename List_Type>
     class Const_List_Iterator {
         public:
@@ -189,22 +192,22 @@ namespace list {
                 return iterator;
             }
 
-            Const_Reference_Type operator * () {
+            Const_Reference_Type operator * () const {
                 return ptr_ -> data_;
             }            
 
-            bool operator == (const Const_List_Iterator & other) {
+            bool operator == (const Const_List_Iterator & other) const {
                 return (ptr_ == other.ptr_ && is_end_ == other.is_end_);
             }
-            bool operator != (const Const_List_Iterator & other) {
+            bool operator != (const Const_List_Iterator & other) const {
                 return (ptr_ != other.ptr_ || is_end_ != other.is_end_);
             }
 
-            bool operator < (const Const_List_Iterator & other) {
+            bool operator < (const Const_List_Iterator & other) const {
                 return ptr_->data_ < other.ptr_->data_;
             }
 
-            bool operator > (const Const_List_Iterator & other) {
+            bool operator > (const Const_List_Iterator & other) const {
                 return ptr_->data_ > other.ptr_->data_;
             }
 
@@ -217,7 +220,6 @@ namespace list {
 
     template <typename T>
     class List {
-
         public:
 
             using Value_Type     = T;
@@ -232,7 +234,7 @@ namespace list {
             }
 
             Const_Iterator cbegin () {
-                return Const_Iterator (head_, false);
+                return Const_Iterator (head_, head_ == nullptr);
             }
 
             Const_Iterator cend () {
@@ -240,7 +242,7 @@ namespace list {
             }
 
             List () {
-                LOG(__PF, "");                
+                LOG(__PF, "DEFAULT CTOR");                
             }
 
             List (const List& list) {
@@ -318,44 +320,11 @@ namespace list {
             delete pos.ptr_;
 
             return begin();
-        }        
+        }   
 
-        Iterator insert (Iterator pos, const T& val) {
+    private:
+        Iterator insert_intenal (Iterator pos, Node <Value_Type> *node) {
             ++size_;           
-
-            Node <Value_Type> *node = new Node <Value_Type> (val);
-            
-            if (pos == end ()) {
-                tail_ = node;
-                node->next_ = nullptr;
-                node->prev_ = pos.ptr_;
-                pos.ptr_->next_ = node;
-                
-                return Iterator (node, true);
-            }
-
-            Iterator it = pos;
-            --it;
-
-            node->next_ = pos.ptr_;
-            pos.ptr_->prev_ = node;
-
-            if (pos != begin ()) {
-                it.ptr_->next_ = node;
-                node -> prev_ = it.ptr_;
-            }
-            else {
-                head_ = node;
-            }
-
-            return Iterator (node, false);
-        }
-
-        Iterator insert (Iterator pos, T&& val) {
-            ++size_;           
-
-            Node <Value_Type> *node = new Node <Value_Type> (std::move (val));
-            
             if (pos == end ()) {
                 tail_ = node;
                 node->next_ = nullptr;
@@ -384,71 +353,68 @@ namespace list {
                 head_ = node;
             }
 
-            return Iterator (node, false);                
+            return Iterator (node, false);
         }
 
-        void push_back (const Value_Type& val) { 
+    public:
+        Iterator insert (Iterator pos, T&& val) {
+            Node <Value_Type> *node = new Node <Value_Type> (std::move (val));
+
+            return insert_intenal (pos, node);                
+        }
+        Iterator insert (Iterator pos, const T& val) {
+            Node <Value_Type> *node = new Node <Value_Type> (val);
+            
+            return insert_intenal (pos, node);
+        }
+
+    private:
+        void push_back_internal (Node <Value_Type> *node) {
             ++size_;           
-
             if (tail_ == nullptr) {
-                tail_ = new Node <Value_Type> (val);
+                tail_ = node;
                 head_ = tail_;
             }
             else {
-                Node <Value_Type> *tmp = new Node <Value_Type> (val);
-                tail_->next_ = tmp;
-                tmp->prev_ = tail_;
-                tail_ = tmp;
+                tail_->next_ = node;
+                node->prev_ = tail_;
+                tail_ = node;
             }
         }
-        
-
+    public:
+        void push_back (const Value_Type& val) { 
+            auto node = new Node <Value_Type> (val);
+            push_back_internal (node);
+        }
         void push_back (Value_Type&& val) {
-            ++size_;
-
-            if (tail_ == nullptr) {
-                tail_ = new Node <Value_Type> (std::move (val));
-                head_ = tail_;
-            }
-            else {
-                Node <Value_Type> *tmp = new Node <Value_Type> (std::move (val));
-                tail_->next_ = tmp;
-                tmp->prev_ = tail_;
-                tail_ = tmp;
-            }
+            auto node = new Node <Value_Type> (std::move (val));
+            push_back_internal (node);
         }
 
-        void push_front (const Value_Type& val) {
+    private:
+        void push_front_internal (Node <Value_Type> *node) {
             ++size_;
-
             if (head_ == nullptr) {
-                head_ = new Node <Value_Type> (val);
+                head_ = node;
                 tail_ = head_;
             }
             else {
-                Node <Value_Type> *tmp = new Node <Value_Type> (val);
-                head_->prev_ = tmp;
-                tmp->next_ = head_;
-                head_ = tmp;
+                head_->prev_ = node;
+                node->next_ = head_;
+                head_ = node;
             }
+        }
+
+    public:
+        void push_front (const Value_Type& val) {
+            Node <Value_Type> *node = new Node <Value_Type> (val);
+            push_front_internal (node);
         }
         
-
         void push_front (Value_Type&& val) {
-            ++size_;
-
-            if (head_ == nullptr) {
-                head_ = new Node <Value_Type> (std::move (val));
-                tail_ = head_;
-            }
-            else {
-                Node <Value_Type> *tmp = new Node <Value_Type> (std::move (val));
-                head_->prev_ = tmp;
-                tmp->next_ = head_;
-                head_ = tmp;
-            }
+            Node <Value_Type> *node = new Node <Value_Type> (std::move (val));
+            push_front_internal (node);
         }
-
 
         void pop_back () {
             if (tail_ == nullptr)
@@ -469,7 +435,6 @@ namespace list {
         }
 
         void pop_front () {
-
             if (head_ == nullptr)
                 return;
             
@@ -484,7 +449,6 @@ namespace list {
             }
 
             delete head_;
-            
             head_ = tmp;
         }
 
@@ -600,11 +564,9 @@ namespace list {
                     break;
 
                 if (*it1 < *it2) {
-                    // ans.push_back (*it1);
                     ++it1;
                 }
                 else if (*it1 > *it2) {
-                    // ans.push_back (*it2);
                     ++it2;
                 }
                 else {
