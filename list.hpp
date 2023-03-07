@@ -360,7 +360,12 @@ namespace list {
                 tail_ = node;
                 node->next_ = nullptr;
                 node->prev_ = pos.ptr_;
-                pos.ptr_->next_ = node;
+
+                if (head_ == nullptr)
+                    head_ = node;
+                else
+                    pos.ptr_->next_ = node;
+
 
                 return Iterator (node, true);
             }

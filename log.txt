@@ -1,0 +1,127 @@
+[INFO] list::List<T>::List() [with T = int] 
+[INFO] list::List<T>::List() [with T = int] 
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::Node<T>::Node(T&&) [with T = int] PARAM MOVE CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] KEK KEK
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List<T>::Iterator list::List<T>::erase(list::List<T>::Iterator) [with T = int; list::List<T>::Iterator = list::List_Iterator<list::List<int> >] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List<T> list::operator^(const list::List<T>&, const list::List<T>&) [with T = int] 
+[INFO] list::List<T>::List() [with T = int] 
+[INFO] list::List<T>::List(const list::List<T>&) [with T = int] COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::List<T>::List(const list::List<T>&) [with T = int] COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List<T>::List(list::List<T>&&) [with T = int] MOVE CTOR
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::List<T>::List(list::List<T>&&) [with T = int] MOVE CTOR
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::List<T> list::operator|(const list::List<T>&, const list::List<T>&) [with T = int] 
+[INFO] list::List<T>::List(const list::List<T>&) [with T = int] COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::List<T>::List(const list::List<T>&) [with T = int] COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::List<T>::List(list::List<T>&&) [with T = int] MOVE CTOR
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::List<T>::List(list::List<T>&&) [with T = int] MOVE CTOR
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::List<T>::List(const list::List<T>&) [with T = int] COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::Node<T>::Node(const T&) [with T = int] PARAM COPY CTOR
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List_Iterator<List>::List_Iterator(list::Node<typename List_Type::Value_Type>*, bool) [with List_Type = list::List<int>; typename List_Type::Value_Type = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::List<T>::~List() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
+[INFO] list::Node<T>::~Node() [with T = int] 
